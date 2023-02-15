@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as API from 'components/API/API';
+import Notiflix from 'notiflix';
 
 export const getContacts = createAsyncThunk(
   'contacts/getAll',
@@ -8,6 +9,7 @@ export const getContacts = createAsyncThunk(
       const data = await API.fetchAllContacts();
       return data;
     } catch (error) {
+      Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);
       return rejectWithValue(error.message);
     }
   }
@@ -20,6 +22,7 @@ export const addContact = createAsyncThunk(
       const data = await API.postContact(contact);
       return data;
     } catch (error) {
+      Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);
       return rejectWithValue(error.message);
     }
   }
@@ -32,6 +35,7 @@ export const deleteContact = createAsyncThunk(
       const data = await API.deleteContact(contactId);
       return data;
     } catch (error) {
+      Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);
       return rejectWithValue(error.message);
     }
   }

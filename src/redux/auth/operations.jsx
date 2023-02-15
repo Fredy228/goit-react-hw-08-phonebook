@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as API from 'components/API/API';
+import Notiflix from 'notiflix';
 
 export const register = createAsyncThunk(
   'auth/register',
@@ -8,6 +9,7 @@ export const register = createAsyncThunk(
       const data = await API.registerUser(credentials);
       return data;
     } catch (error) {
+      Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);
       return rejectWithValue(error.message);
     }
   }
@@ -20,6 +22,7 @@ export const logIn = createAsyncThunk(
       const data = await API.logInUser(credentials);
       return data;
     } catch (error) {
+      Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);
       return rejectWithValue(error.message);
     }
   }
@@ -29,6 +32,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, {rejectWithValue
   try {
     API.logOutUser();
   } catch (error) {
+    Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);
     return rejectWithValue(error.message);
   }
 });
@@ -47,6 +51,7 @@ export const refreshUser = createAsyncThunk(
       const data = await API.userRefresh()
       return data;
     } catch (error) {
+      Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);
       return thunk.rejectWithValue(error.message);
     }
   }
