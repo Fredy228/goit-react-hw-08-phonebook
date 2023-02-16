@@ -1,4 +1,4 @@
-import { BoxHome, TitleHome } from "./StylePages/Home.styled";
+import { BoxHome, TitleHome, TextHome } from "./StylePages/Home.styled";
 
 const Home = () => {
   return (
@@ -6,6 +6,9 @@ const Home = () => {
       <TitleHome>
         Welcome to Phonebook!
       </TitleHome>
+      <TextHome>
+        Create and save your contacts.
+      </TextHome>
     </BoxHome>
   );
 };

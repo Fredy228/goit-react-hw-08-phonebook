@@ -7,6 +7,8 @@ export const ListContacts = styled.ul`
     border-radius: 15px;
     background-color: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    max-height: 420px;
+    overflow-y: scroll;
 `;
 
 export const ItemContact = styled.li`
@@ -25,6 +27,11 @@ export const ItemContact = styled.li`
         top: 50%;
         right: 10px;
         transform: translate(0, -50%);
+        width: 75px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 `;
 

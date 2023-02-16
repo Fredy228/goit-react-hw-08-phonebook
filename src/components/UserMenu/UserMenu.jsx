@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from '../../redux/auth/operations';
 import { selectUser } from '../../redux/auth/selectors';
-import { BoxUserMenu, TextUser } from './UserMenu.styled';
+import { BoxUserMenu, TextUser, AvatarUser } from './UserMenu.styled';
 import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
+
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const UserMenu = () => {
 
   return (
     <BoxUserMenu>
-      <Avatar>{user.name.slice(0,1)}</Avatar>
+      <AvatarUser>{user.name.slice(0,1)}</AvatarUser>
       <TextUser>{user.name}</TextUser>
       <Button variant="outlined" type="button" onClick={() => dispatch(logOut())}>
         Logout

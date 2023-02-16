@@ -10,7 +10,6 @@ export const TextLogin = styled.p`
 export const BoxLogin = styled.div`
     text-align: center;
     margin: 20px 0;
-    min-height: 360px;
 `
 
 export const LinkRegister  = styled(NavLink)`

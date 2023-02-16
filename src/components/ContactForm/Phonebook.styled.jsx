@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const From = styled.form`
-    width: 400px;
     padding: 20px;
     display: inline-flex;
     flex-direction: column;
@@ -18,9 +17,19 @@ export const From = styled.form`
 
 export const Label = styled.label`
     margin-bottom: 15px;
-    input {
-        width: 300px;
+        
+    div {
+        width: 320px;
+        @media screen and (max-width: 415px) {
+            width: 250px;
+        }
     }
+    /* input {
+        width: 320px;
+        @media screen and (max-width: 415px) {
+            width: 100%;
+        }
+    } */
 `;
 
 

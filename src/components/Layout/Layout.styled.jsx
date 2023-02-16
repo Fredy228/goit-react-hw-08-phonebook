@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const Main = styled.main`
     display: flex;
     justify-content: center;
-`
+    padding: 10px 0;
+`;
 
 export const Container = styled.div`
-    max-width: 800px;
+    max-width: 1200px;
+    min-height: 100vh;
     margin: 0 auto;
     background-color: #dcefff;
 `;
@@ -17,4 +19,7 @@ export const Header = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 360px) {
+        padding: 7px;
+    }
 `;

@@ -14,8 +14,10 @@ export const LinkNav = styled(NavLink)`
     padding: 10px;
     border-radius: 7px;
     transition: background-color 250ms linear;
-    text-decoration: underline;
     :hover {
         background-color: #a2d0f6;
     }
-`
+    &.active {
+        background-color: #a2d0f6;
+    }
+`;
