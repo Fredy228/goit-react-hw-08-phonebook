@@ -20,6 +20,7 @@ export const addContact = createAsyncThunk(
   async (contact, { rejectWithValue }) => {
     try {
       const data = await API.postContact(contact);
+      Notiflix.Notify.success('Contact added');
       return data;
     } catch (error) {
       Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);
@@ -33,6 +34,7 @@ export const deleteContact = createAsyncThunk(
   async (contactId, { rejectWithValue }) => {
     try {
       const data = await API.deleteContact(contactId);
+      Notiflix.Notify.info('Contact deleted');
       return data;
     } catch (error) {
       Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);

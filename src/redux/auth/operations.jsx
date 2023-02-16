@@ -7,6 +7,7 @@ export const register = createAsyncThunk(
   async (credentials, {rejectWithValue}) => {
     try {
       const data = await API.registerUser(credentials);
+      Notiflix.Notify.success('You registered successfully');
       return data;
     } catch (error) {
       Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);
@@ -20,6 +21,7 @@ export const logIn = createAsyncThunk(
   async (credentials, {rejectWithValue}) => {
     try {
       const data = await API.logInUser(credentials);
+      Notiflix.Notify.success('You logined successfully');
       return data;
     } catch (error) {
       Notiflix.Notify.failure(`'Opps... Error: ${error.message}`);
